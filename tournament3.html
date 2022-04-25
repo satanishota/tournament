@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>トーナメント表</title>
+</head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+ rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+  crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" 
+  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<style>
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar-brand {
+  height: 80px;
+  padding: 20px;
+  font-size: x-large;
+}
+
+.slide-fade-leave-active {
+  transition: all .8s ease;
+}
+ .slide-fade-leave-to
+ {
+  transform: translateX(300px)
+ }
+
+.box1 {
+  width: 1000px; /* 横幅いっぱい */
+  height: 600px; /* 高さ120px */
+  background-color: yellow;
+  margin: 10px;
+  padding: 10px;
+  display: flex; /* Flexboxの利用 */
+  justify-content: left; 
+}
+
+.box2 {
+  width: 200px; /* 横幅いっぱい */
+  height: 520px; /* 高さ70px */
+  /* background-color: orangered;  */
+  
+}
+
+.box3 {
+  width: 100px; /* 横幅いっぱい */
+  height: 500px; /* 高さ50px */
+  /* background-color: pink; 背景色pink */
+}
+.box4 {
+  width: 100px; /* 横幅いっぱい */
+  height: 500px; /* 高さ50px */
+  /* background-color: blue; 背景色pink */
+}
+.box5{
+  width: 1000px; /* 横幅いっぱい */
+  height: 600px; /* 高さ120px */
+  background-color: pink; 
+  margin: 10px;
+  display: flex; /* Flexboxの利用 */
+  justify-content: left; 
+}
+.box6 {
+  width: 200px; /* 横幅いっぱい */
+  height: 520px; /* 高さ70px */
+  /* background-color: orangered;  */
+  margin: 20px;
+}
+.box7 {
+  width: 50px; /* 横幅いっぱい */
+  height: 520px; /* 高さ70px */
+  /* background-color: green;  */
+  margin-top: 36px;
+  text-align: right;
+  font-size: 41px;;
+}
+.form-check {
+  display: flex;
+  justify-content: right;
+}
+
+.sen1a{
+  border:  1px;
+  width: 100px; /* 横幅いっぱい */
+  height: 40px; /* 高さ50px */
+}
+.sen1b{
+  border:  1px;
+  width: 100px; /* 横幅いっぱい */
+  height: 58px; /* 高さ50px */
+}
+.sen2a{
+  border: solid 2px;
+  border-left: 0px;
+  border-bottom: 0px;
+
+  width: 93px; /* 横幅いっぱい */
+  height: 20px; /* 高さ50px */
+}
+.sen2ared{
+  border: solid 2px;
+  border-left: 0px;
+  border-bottom: 0px;
+
+  width: 93px; /* 横幅いっぱい */
+  height: 20px; /* 高さ50px */
+  color:red
+}
+.sen2b{
+  border: solid 2px;
+  border-left: 0px;
+  border-top: 0px;
+  width: 93px; 
+  height: 20px;
+}
+.sen2bred{
+  border: solid 2px;
+  border-left: 0px;
+  border-top: 0px;
+  width: 93px; 
+  height: 20px;
+  color:red
+}
+.sen3a{
+  border: 1px;
+  width: 200px; /* 横幅いっぱい */
+  height: 70px; /* 高さ50px */
+}
+.sen3b{
+  border: 1px;
+  width: 200px; /* 横幅いっぱい */
+  height: 124px; /* 高さ50px */
+}
+.sen4a{
+  border: solid 2px;
+  border-left: 0px;
+  border-bottom: 0px;
+  width: 93px; 
+  height: 50px;
+}
+.sen4ared{
+  border: solid 2px;
+  border-left: 0px;
+  border-bottom: 0px;
+  width: 93px; 
+  height: 50px;
+  color: red;
+}
+.sen4b{
+  border: solid 2px;
+  border-left: 0px;
+  border-top: 0px;
+  width: 93px; 
+  height: 50px;
+}
+.sen4bred{
+  border: solid 2px;
+  border-left: 0px;
+  border-top: 0px;
+  width: 93px; 
+  height: 50px;
+  color: red;
+}
+.sen5a{
+  border: 1px;
+  width: 200px; /* 横幅いっぱい */
+  height: 131px; /* 高さ50px */
+}
+
+.sen6a{
+  border: solid 2px;
+  border-left: 0px;
+  border-bottom: 0px;
+  width: 93px; 
+  height: 113px;
+}
+.sen6ared{
+  border: solid 2px;
+  border-left: 0px;
+  border-bottom: 0px;
+  width: 93px; 
+  height: 113px;
+  color: red;
+}
+.sen6b{
+  border: solid 2px;
+  border-left: 0px;
+  border-top: 0px;
+  width: 93px; 
+  height: 113px;
+}
+.sen6bred{
+  border: solid 2px;
+  border-left: 0px;
+  border-top: 0px;
+  width: 93px; 
+  height: 113px;
+  color: red;
+}
+.sen7a{
+  width: 200px; /* 横幅いっぱい */
+  height: 255px; /* 高さ50px */
+ 
+}
+.sen7b{
+  
+  border-top: solid 4px;
+  width: 100px;
+}
+.sen7bred{
+  
+  border-top: solid 4px;
+  width: 100px;
+  color:red
+}
+.sen8a{
+  width: 200px; /* 横幅いっぱい */
+  height: 240px; /* 高さ50px */
+ 
+}
+.aa{
+  width: 30px;
+  display: inline-block;;
+}
+</style>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-info ">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">トーナメント表</a>
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+     
+          <div class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle "  href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">
+            一回戦
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">7/7 10:20</a></li>
+            <li><a class="dropdown-item" href="#">いいいいいいいいいいいいいいいいいいいいいいいい競技場</a></li>
+            <li> <img src="image/ドーム１.jpg" class="dropdown-item" alt="" /></li>
+          </ul>
+          </div>
+
+          <div class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">
+            二回戦
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">8/8 12:30</a></li>
+            <li><a class="dropdown-item" href="#">うううううううううううううううううううううううう競技場</a></li>
+            <li> <img src="image/ドーム１.jpg" class="dropdown-item" alt="" /></li>
+          </ul>
+          </div>
+
+          <div class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">
+            三回戦
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">9/9 13:10</a></li>
+            <li><a class="dropdown-item" href="#">ええええええええええええええええええええええええ競技場</a></li>
+            <li> <img src="image/ドーム１.jpg" class="dropdown-item" alt="" /></li>
+          </ul>
+          </div>
+
+          <div class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">
+            四回戦
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">10/10 14:40</a></li>
+            <li><a class="dropdown-item" href="#">おおおおおおおおおおおおおおおおおおおおおおおおお競技場</a></li>
+            <li> <img src="image/ドーム１.jpg" class="dropdown-item" alt="" /></li>
+          </ul>
+          </div>
+
+          <div class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">
+            五回戦
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">11/11 15:50</a></li>
+            <li><a class="dropdown-item" href="#">かかかかかかかかかかかかかかかかかかかかかか競技場</a></li>
+            <li> <img src="image/ドーム１.jpg" class="dropdown-item" alt="" /></li>
+          </ul>
+          </div>
+
+          <div class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">
+            六回戦
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">12/12 16:10</a></li>
+            <li><a class="dropdown-item" href="#">きききききききききききききききききききききき競技場</a></li>
+            <li> <img src="image/ドーム１.jpg" class="dropdown-item" alt="" /></li>
+          </ul>
+          </div>
+
+          <div class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">
+            七回戦
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">1/1 17:30</a></li>
+            <li><a class="dropdown-item" href="#">くくくくくくくくくくくくくくくくくく競技場</a></li>
+            <li> <img src="image/ドーム１.jpg" class="dropdown-item" alt="" /></li>
+          </ul>
+          </div>
+
+
+          
+    </div>
+  </div>
+
+</nav>
+
+  <div id="app3">
+  
+  <div class="box1">
+     
+      <!-- ！はどういう意味 -->
+   
+    <div class="box2">
+      <div class="form-group">
+        <label>1</label><input type="text" class="form-control" v-model="addlist1">
+        <label>2</label><input type="text" class="form-control" v-model="addlist2">
+        <label>3</label><input type="text" class="form-control" v-model="addlist3">
+        <label>4</label><input type="text" class="form-control" v-model="addlist4">
+        <label>5</label><input type="text" class="form-control" v-model="addlist5">
+        <label>6</label><input type="text" class="form-control" v-model="addlist6">
+        <label>7</label><input type="text" class="form-control" v-model="addlist7">
+        <label>8</label><input type="text" class="form-control" v-model="addlist8">
+    </div>
+    
+  </div>
+      
+      
+
+    <div class="box3">
+    <div class="sen1a"></div> <div v-bind:class="sen2a01"></div> 
+    <div class="form-check"><input class="form-check-input" type="radio" name="radio1" id="radio1a" checked  data-bs-toggle="modal" data-bs-target="#exampleModal" data-backdrop="false"></div>
+    <div  v-bind:class="sen2b01"></div>
+    <div class="sen1b"></div> <div  v-bind:class="sen2a02"></div> 
+    <div class="form-check"><input class="form-check-input" type="radio" name="radio1" id="radio1a" checked data-bs-toggle="modal" data-bs-target="#exampleModal" data-backdrop="false"></div>
+    <div v-bind:class="sen2b02"></div>
+    <div class="sen1b"></div> <div  v-bind:class="sen2a03"></div> 
+    <div class="form-check"><input class="form-check-input" type="radio" name="radio1" id="radio1a" checked data-bs-toggle="modal" data-bs-target="#exampleModal" data-backdrop="false"></div>
+    <div  v-bind:class="sen2b03"></div>
+    <div class="sen1b"></div> <div  v-bind:class="sen2a04"></div>
+    <div class="form-check"><input class="form-check-input" type="radio" name="radio1" id="radio1a" checked data-bs-toggle="modal" data-bs-target="#exampleModal" data-backdrop="false"></div> 
+    <div  v-bind:class="sen2b04"></div>
+    </div>
+    <div class="box4">
+      <div class="sen3a"></div> <div v-bind:class="sen4a01"></div> 
+    <div class="form-check"><input class="form-check-input" type="radio" name="radio1" id="radio1a" checked data-bs-toggle="modal" data-bs-target="#exampleModal" data-backdrop="false"></div>
+    <div v-bind:class="sen4b01"></div>
+      <div class="sen3b"></div> <div v-bind:class="sen4a02"></div> 
+    <div class="form-check"><input class="form-check-input" type="radio" name="radio1" id="radio1a" checked data-bs-toggle="modal" data-bs-target="#exampleModal" data-backdrop="false"></div>
+    <div v-bind:class="sen4b02"></div>
+    </div>
+    <div class="box3">
+      <div class="sen5a"></div> <div v-bind:class="sen6a"></div> 
+      <div class="form-check"><input class="form-check-input" type="radio" name="radio1" id="radio1a" checked data-bs-toggle="modal" data-bs-target="#exampleModal" data-backdrop="false"></div>
+      <div v-bind:class="sen6b"></div>
+       
+    </div>
+    
+    <div class="box4">
+     <div class="sen7a"></div>
+     <div v-bind:class="sen7b"></div>
+    </div>
+    <div class="box2">
+      <div class="sen8a"></div>
+      <transition name="slide-fade">
+        <div v-if="show" class="form-group">
+          <input type="text" class="form-control"  v-bind:class="tex15" v-model="message15">
+        </div>
+       
+      </transition>
+    
+
+    
+        <!-- 再生ボタン -->
+        <button v-on:click="play" class="btn btn-danger">優勝</button><!-- #play -->
+   
+    <audio >
+      <source src="image/itemget5.mp3">
+     
+    </audio>
+
+  </div>
+  </div>
+
+
+  <button class = "btn btn-primary m-2" v-on:click="add">追加</button> 
+  <button class = "btn btn-warning m-2"v-on:click="iro1">1回線</button> 
+  <button class = "btn btn-warning m-2"v-on:click="iro2">2回戦</button> 
+  <button class = "btn btn-warning m-2"v-on:click="iro3">3回戦</button> 
+  <button class = "btn btn-warning m-2"v-on:click="iro4">4回戦</button> 
+  <button class = "btn btn-success m-2"v-on:click="iro5">5回戦</button> 
+  <button class = "btn btn-success m-2"v-on:click="iro6">6回戦</button> 
+  <button class = "btn btn-danger m-2"v-on:click="iro7">7回戦</button> 
+  
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- クリックしたときのモーダルを指定 -->
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">得点詳細</h5>
+          
+        </div>
+        <br class="modal-body">
+          <p>前半<input type="text" class="aa">分{{message1}}チーム1点</br>後半<input type="text" class="aa">分{{message2}}チーム1点</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+         
+        </div>
+      </div>
+    </div>
+ 
+
+  <div class="box5">
+    <div class="box6">
+    <div class="ten1"> <label class="name1">1回戦</label> <label class="h4">{{message1}}</label><input type="text" class="form-control" v-bind:class="tex1" v-model="ist1"></div>
+    <div class="ten1"> <label class="name1">2回戦</label> <label class="h4">{{message3}}</label><input type="text" class="form-control" v-bind:class="tex3" v-model="ist3"> </div>
+    <div class="ten1"> <label class="name1">3回戦</label> <label class="h4">{{message5}}</label><input type="text" class="form-control" v-bind:class="tex5" v-model="ist5"></div>
+    <div class="ten1"> <label class="name1">4回戦</label> <label class="h4">{{message7}}</label><input type="text" class="form-control" v-bind:class="tex7" v-model="ist7"></div>
+    <div class="ten1"> <label class="name1">5回戦</label> <label class="h4"> {{message9}}</label><input type="text" class="form-control" v-bind:class="tex9" v-model="ist9"></div>
+    <div class="ten1"> <label class="name1">6回戦</label> <label class="h4">{{message11}}</label><input type="text" class="form-control" v-bind:class="tex11" v-model="ist11"></div>
+    <div class="ten1"> <label class="name1">7回戦</label> <label class="h4"> {{message13}}</label><input type="text" class="form-control" v-bind:class="tex13"v-model="ist13"></div>
+   
+   </div>
+    
+    <div class="box7"> VS</div>
+    
+     
+    <div class="box6">
+    <div class="ten1"> <label >1回戦</label> <label class="h4">{{message2}}</label><input type="text" class="form-control"v-bind:class="tex2" v-model="ist2"></div>
+    <div class="ten1"> <label id="name2b">2回戦</label><label class="h4">{{message4}}</label><input type="text" class="form-control"v-bind:class="tex4" v-model="ist4"></div>
+    <div class="ten1"> <label id="name2c">3回戦</label><label class="h4">{{message6}}</label><input type="text" class="form-control"v-bind:class="tex6" v-model="ist6"></div>
+    <div class="ten1"> <label id="name2d">4回戦</label><label class="h4">{{message8}}</label><input type="text" class="form-control"v-bind:class="tex8" v-model="ist8"></div>
+    <div class="ten1"> <label id="name2e">5回戦</label><label class="h4">{{message10}}</label><input type="text" class="form-control"v-bind:class="tex10" v-model="ist10"></div>
+    <div class="ten1"> <label id="name2f">6回戦</label><label class="h4">{{message12}}</label><input type="text" class="form-control"v-bind:class="tex12" v-model="ist12"></div>
+    <div class="ten1"> <label id="name2g">7回戦</label> <label class="h4">{{message14}}</label><input type="text" class="form-control"v-bind:class="tex14" v-model="ist14"></div>
+   
+   </div>
+    </div>
+    </div>
+
+
+</body>
+  <script src="https://unpkg.com/vue@next"></script>
+<script>
+  
+  const appdate3 = {
+      data(){
+        //でーたとDOMが関連付けられていますよ。
+        return{
+          show: true,
+         
+      
+          audio:{},
+          message1:"",
+          message2:"",
+          message3:"",
+          message4:"",
+          message5:"",
+          message6:"",
+          message7:"",
+          message8:"",
+          message9:"",
+          message10:"",
+          message11:"",
+          message12:"",
+          message13:"",
+          message14:"",
+          message15:"???",
+
+          ist1:"",
+          ist2:"",
+          ist3:"",
+          ist4:"",
+          ist5:"",
+          ist6:"",
+          ist7:"",
+          ist8:"",
+          ist9:"",
+          ist10:"",
+          ist11:"",
+          ist12:"",
+          ist13:"",
+          ist14:"",
+
+          sen2a01:"sen2a",
+          sen2b01:"sen2b",
+          sen2a02:"sen2a",
+          sen2b02:"sen2b",
+          sen2a03:"sen2a",
+          sen2b03:"sen2b",
+          sen2a04:"sen2a",
+          sen2b04:"sen2b",
+          sen4a01:"sen4a",
+          sen4b01:"sen4b",
+          sen4a02:"sen4a",
+          sen4b02:"sen4b",
+          sen6a:"sen6a",
+          sen6b:"sen6b",
+          sen7b:"sen7b",
+
+          tex1:"",
+          tex2:"",
+          tex3:"",
+          tex4:"",
+          tex5:"",
+          tex6:"",
+          tex7:"",
+          tex8:"",
+          tex9:"",
+          tex10:"",
+          tex11:"",
+          tex12:"",
+          tex13:"",
+          tex14:"",
+          tex15:"",
+         
+
+        }
+      },
+      methods:{
+        add(){
+          this.message1 = this.addlist1
+          this.message2 = this.addlist2
+          this.message3 = this.addlist3
+          this.message4 = this.addlist4
+          this.message5 = this.addlist5
+          this.message6 = this.addlist6
+          this.message7 = this.addlist7
+          this.message8 = this.addlist8
+          
+          //thisが二回
+          //sが必要
+        },
+        play(){
+          this.audio = new Audio('image/itemget5.mp3');
+        
+          this.audio.play()
+          this.show = !this.show
+
+        },
+        iro1(){
+          if(this.ist1 > this.ist2){
+            this.message9 = this.addlist1
+            this.sen2a01 = "sen2ared"
+            this.sen2b01 = "sen2b"
+            this.tex1 ="bg-primary text-light"
+            }
+          else{
+          this.message9 = this.addlist2
+          this.sen2b01 = "sen2bred"
+          this.sen2a01 = "sen2a"
+          this.tex2 ="bg-primary text-light"
+        }
+        },
+        iro2(){
+          if(this.ist3 > this.ist4){
+            this.message10 = this.addlist3
+            this.sen2a02 = "sen2ared"
+            this.sen2b02 = "sen2b"
+            this.tex3 ="bg-primary text-light"
+            }
+          else{
+          this.message10 = this.addlist4
+          this.sen2b02 = "sen2bred"
+          this.sen2a02 = "sen2a"
+          this.tex4 ="bg-primary text-light"}
+        },
+        iro3(){
+          if(this.ist5 > this.ist6){
+            this.message11 = this.addlist5
+            this.sen2a03 = "sen2ared"
+            this.sen2b03 = "sen2b"
+            this.tex5 ="bg-primary text-light"
+            }
+          else{
+          this.message11 = this.addlist6
+          this.sen2b03 = "sen2bred"
+          this.sen2a03 = "sen2a"
+          this.tex6 ="bg-primary text-light"}
+        },
+        iro4(){
+          if(this.ist7 > this.ist8){
+            this.message12 = this.addlist7
+            this.sen2a04 = "sen2ared"
+            this.sen2b04 = "sen2b"
+            this.tex7 ="bg-primary text-light"
+            }
+          else{
+          this.message12 = this.addlist8
+          this.sen2b04 = "sen2bred"
+          this.sen2a04 = "sen2a"
+          this.tex8 ="bg-primary text-light"}
+        },
+        iro5(){
+          if(this.ist9 > this.ist10){
+            this.message13 = this.message9
+            this.sen4a01 = "sen4ared"
+            this.sen4b01 = "sen4b"
+            this.tex9 ="bg-primary text-light"
+            }
+          else{
+          this.message13 = this.message10
+          this.sen4b01 = "sen4bred"
+          this.sen4a01 = "sen4a"
+          this.tex10 ="bg-primary text-light"}
+        },
+        iro6(){
+          if(this.ist11 > this.ist12){
+            this.message14 = this.message11
+            this.sen4a02 = "sen4ared"
+            this.sen4b02 = "sen4b"
+            this.tex11 ="bg-primary text-light"
+            }
+          else{
+          this.message14 = this.message12
+          this.sen4b02 = "sen4bred"
+          this.sen4a02 = "sen4a"
+          this.tex12 ="bg-primary text-light"}
+        },
+        
+        iro7(){
+          if(this.ist13 > this.ist14){
+           this.message15 = this.message13
+            this.sen6a = "sen6ared"
+            this.sen6b = "sen6b"
+            this.sen7b = "sen7bred"
+            this.tex13 ="bg-primary text-light"
+            this.tex15 = "bg-primary text-light"
+
+            }
+          else{
+            this.message15 = this.message14
+          this.sen6b = "sen6bred"
+          this.sen6a02 = "sen6a"
+          this.sen7b = "sen7bred"
+          this.tex14 ="bg-primary text-light"
+          this.tex15 = "bg-primary text-light"
+        }
+        },
+        
+      }
+    }
+
+   
+    Vue.createApp(appdate3).mount('#app3')
+   
+  </script>
+</body>
+</html>
